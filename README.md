@@ -1,7 +1,7 @@
 # Structured Linear Neural Dynamics model
 This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
 <p align="center">
-  <img src="https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/frame1.png" width="900px"/>
+  <img src="https://github.com/ms140429/explainable_Neural_Dynamics_Model/tree/main/1_Software_code/frame1.png" width="900px"/>
 </p>
 
 # Abstract
@@ -9,7 +9,7 @@ The permanent magnet synchronous motor finds extensive use in industrial applica
 
 # Quick start
 ## Dataset
-Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/Data) folder **firstly**!
+Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/explainable_Neural_Dynamics_Model/tree/main/1_Software_code/Data) folder **firstly**!
 ## Configuration
 Go into the folder *1_Software_code*, and
 ```
@@ -23,12 +23,12 @@ python Train.py
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/pred.png" />
+  <img src="https://github.com/ms140429/explainable_Neural_Dynamics_Model/tree/main/1_Software_code/pred.png" />
 </p>
 
 ## Decoupling
 <p align="center">
-  <img src="https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/decouple.png" />
+  <img src="https://github.com/ms140429/explainable_Neural_Dynamics_Model/tree/main/1_Software_code/decouple.png" />
 </p>
 
 # Citation
