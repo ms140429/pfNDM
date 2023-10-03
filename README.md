@@ -1,7 +1,7 @@
 # Structured Linear Neural Dynamics model
 This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/tree/main/1_Software_code/frame1.png" width="900px"/>
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/frame1.png" width="900px"/>
 </p>
 
 # Abstract
@@ -23,12 +23,12 @@ python Train.py
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/tree/main/1_Software_code/pred.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred.png" />
 </p>
 
 ## Decoupling
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/tree/main/1_Software_code/decouple.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/decouple.png" />
 </p>
 
 # Citation
