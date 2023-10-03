@@ -31,6 +31,15 @@ python Train.py
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/decouple.png" />
 </p>
 
+# GitHub Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ms140429/Explainable_Neural_Dynamics_Model&type=Date)](https://star-history.com/#ms140429/Explainable_Neural_Dynamics_Model)
+
+# Contributors Wall
+<a href="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ms140429/Explainable_Neural_Dynamics_Model" />
+</a>
+
 # Citation
 ```
 @artical{
