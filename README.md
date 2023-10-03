@@ -9,7 +9,7 @@ The permanent magnet synchronous motor finds extensive use in industrial applica
 
 # Quick start
 ## Dataset
-Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/XinyuanLiao/Structured_Linear_Neural_Dynamics_model/tree/main/Data) folder **firstly**!
+Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/Data) folder **firstly**!
 ## Configuration
 ```
 pip install -r requirements.txt
@@ -21,12 +21,12 @@ python Train.py
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/XinyuanLiao/NDM/blob/main/pred.png" />
+  <img src="https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/pred.png" />
 </p>
 
 ## Decoupling
 <p align="center">
-  <img src="https://github.com/XinyuanLiao/NDM/blob/main/decouple.png" />
+  <img src="https://github.com/ms140429/explainable_Neural_Dynamic_Model/tree/main/1_Software_code/decouple.png" />
 </p>
 
 # Citation
