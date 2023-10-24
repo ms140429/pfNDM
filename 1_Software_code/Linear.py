@@ -9,9 +9,6 @@ class LinearBase(nn.Module, ABC):
         super().__init__()
         self.in_features, self.out_features = insize, outsize
         self.bias = nn.Parameter(torch.zeros(1, outsize), requires_grad=bias)
-        if bias:
-            bound = 1 / math.sqrt(insize)
-            torch.nn.init.uniform_(self.bias, -bound, bound)
         if provide_weights:
             self.weight = nn.Parameter(torch.Tensor(insize, outsize))
             torch.nn.init.kaiming_uniform_(self.weight, a=math.sqrt(5))
