@@ -5,7 +5,7 @@ This repository includes the code for the paper "Explainable Neural Dynamics Mod
 </p>
 
 # Abstract
-The permanent magnet synchronous motor finds extensive use in industrial applications, and the development of effective thermal management solutions is crucial to enhance its power density. Accurate temperature prediction serves as the fundamental basis for the design of effective thermal management strategies. Physics-based prediction methods exhibit superior real-time performance, but their intricate modeling process necessitates substantial expert knowledge guidance and lacks versatility. Conversely, data-driven prediction methods, while offering flexibility, often lack guarantees regarding the behavior of the systems. This paper proposed a structured linear neural dynamics model for motor temperature prediction. This model is data-driven, with a priori information integrated into its structure, which preserves flexibility while guaranteeing system stability through the Perron-Frobenius theorem. Additionally, this paper achieves the decoupling of control input from state transitions and the embedded implementation of this model on STM32. The model undergoes evaluation using a motor temperature dataset and demonstrates state-of-the-art prediction accuracy while maintaining a compact model size.
+Accurate temperature prediction of the permanent magnet synchronous motor serves as the fundamental basis for designing effective thermal management strategies. Model-based prediction methods exhibit superior real-time performance, but their intricate modeling process necessitates substantial expert knowledge guidance and lacks versatility. Conversely, data-driven prediction methods, while offering flexibility, often lack physical implications in terms of system dynamics. This paper proposed a structured linear neural dynamics model for motor temperature prediction. This model is data-driven, with prior information integrated into its structure, which preserves flexibility while guaranteeing system stability through the Perron-Frobenius theorem. Additionally, this paper achieves the decoupling of control input from state transitions and the embedded deployment of this model. The method is validated with a real dataset. The lightweight feature is demonstrated by the implementation of an STM32 Microcontroller.
 
 # Quick start
 ## Dataset
@@ -23,12 +23,12 @@ python Train.py
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred1.png" />
 </p>
 
 ## Decoupling
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/decouple.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/decouple1.png" />
 </p>
 
 # Citation
