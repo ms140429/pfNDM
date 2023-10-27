@@ -36,6 +36,14 @@ def get_parameters(model):
     return trainable_params
 
 
+def Cosine_similarity(vec1, vec2):
+    dot_product = np.dot(vec1, np.conjugate(vec2))
+    norm_vec1 = np.linalg.norm(vec1)
+    norm_vec2 = np.linalg.norm(vec2)
+    similarity = dot_product / (norm_vec1 * norm_vec2)    
+    return similarity
+
+
 class EarlyStopping:
     def __init__(self, patience, cold, path='./checkpoint/Dynamic/dynamic.pth'):
         self.patience = patience
