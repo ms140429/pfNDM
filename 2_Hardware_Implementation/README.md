@@ -3,7 +3,7 @@ The PfNDM is split into five networks: f01, f02, fu, fx, and fy. The fu, fx and 
 
 The MCU board is STM32H743.Enable rs232 serial port to transmit prediction results to the computer and a LCD screen  to display the output results.
 
-The environment includes:
-STM32CUBEMX 6.8.0
-X-CUBE-AI 8.1.0
-MDK-ARM V5.32
+The environment includes:  
+* STM32CUBEMX 6.8.0  
+* X-CUBE-AI 8.1.0  
+* MDK-ARM V5.32
