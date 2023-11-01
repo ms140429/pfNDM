@@ -1,0 +1,148 @@
+Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
+Created date          : 2023-11-01 15:45:43
+Parameters            : generate --name network_f01 -m C:/Users/longyx/Desktop/lxy“∆÷≤/kmodel (2).keras --type keras --compression none --verbosity 1 --workspace C:\Users\longyx\AppData\Local\Temp\mxAI_workspace2335849807428007060926431401487190 --output C:\Users\longyx\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs
+
+Exec/report summary (generate)
+-------------------------------------------------------------------------------------------------------------
+model file         :   C:\Users\longyx\Desktop\lxy“∆÷≤\kmodel (2).keras                                        
+type               :   keras                                                                                 
+c_name             :   network_f01                                                                           
+compression        :   none                                                                                  
+options            :   allocate-inputs, allocate-outputs                                                     
+optimization       :   balanced                                                                              
+target/series      :   stm32h7                                                                               
+workspace dir      :   C:\Users\longyx\AppData\Local\Temp\mxAI_workspace2335849807428007060926431401487190   
+output dir         :   C:\Users\longyx\.stm32cubemx\network_output                                           
+model_fmt          :   float                                                                                 
+model_name         :   kmodel_2                                                                              
+model_hash         :   1ac864d09a28af2b31520737cbed60d9                                                      
+params #           :   104 items (416 B)                                                                     
+-------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input_0' (domain:activations/**default**)                                            
+                   :   64 items, 256 B, ai_float, float, (1,16,4)                                            
+output 1/1         :   'average_pooling1d_1' (domain:activations/**default**)                                
+                   :   56 items, 224 B, ai_float, float, (1,14,4)                                            
+macc               :   1,852                                                                                 
+weights (ro)       :   416 B (416 B) (1 segment)                                                             
+activations (rw)   :   416 B (416 B) (1 segment) *                                                           
+ram (total)        :   416 B (416 B) = 416 + 0 + 0                                                           
+-------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - kmodel_2 ['input_0'] ['average_pooling1d_1']
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+m_id   layer (type,original)                          oshape                   param/size     macc        connected to   | c_size          c_macc          c_type                      
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+0      input_0 (Input, None)                          [b:None,h:16,h:16,c:4]                                             | +208(+100.0%)   +836(+100.0%)   conv2d_of32/nl_of32[0, 1]   
+       conv1d_conv2d (Conv2D, Conv1D)                 [b:None,h:16,h:16,c:4]   52/208          772             input_0   | -208(-100.0%)   -772(-100.0%)   
+       conv1d (Nonlinearity, Conv1D)                  [b:None,h:16,h:16,c:4]                    64       conv1d_conv2d   |                 -64(-100.0%)    
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+1      average_pooling1d (Pool, AveragePooling1D)     [b:None,h:15,h:15,c:4]                   120              conv1d   |                                 pool_of32[2]                
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+2      conv1d_1_conv2d (Conv2D, Conv1D)               [b:None,h:15,h:15,c:4]   52/208          724   average_pooling1d   |                 +60(+8.3%)      conv2d_of32/nl_of32[3, 4]   
+       conv1d_1 (Nonlinearity, Conv1D)                [b:None,h:15,h:15,c:4]                    60     conv1d_1_conv2d   |                 -60(-100.0%)    
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+3      average_pooling1d_1 (Pool, AveragePooling1D)   [b:None,h:14,h:14,c:4]                   112            conv1d_1   |                                 pool_of32[o][5]             
+------ ---------------------------------------------- ------------------------ ------------ ------ ------------------- --- --------------- --------------- --------------------------- 
+model/c-model: macc=1,852/1,852  weights=416/416  activations=--/416 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : kmodel_2
+c-name                : network_f01
+c-node #              : 6
+c-array #             : 11
+activations size      : 416 (1 segment)
+weights size          : 416 (1 segment)
+macc                  : 1852
+inputs                : ['input_0_output']
+outputs               : ['average_pooling1d_1_output']
+
+C-Arrays (11)
+------ ---------------------------- ----------- ------------------------- ------------- --------- --------- 
+c_id   name (*_array)               item/size   domain/mem-pool           c-type        fmt       comment   
+------ ---------------------------- ----------- ------------------------- ------------- --------- --------- 
+0      conv1d_1_output              60/240      activations/**default**   float         float32             
+1      average_pooling1d_1_output   56/224      activations/**default**   float         float32   /output   
+2      conv1d_conv2d_weights        48/192      weights/weights           const float   float32             
+3      conv1d_conv2d_bias           4/16        weights/weights           const float   float32             
+4      conv1d_1_conv2d_weights      48/192      weights/weights           const float   float32             
+5      conv1d_1_conv2d_bias         4/16        weights/weights           const float   float32             
+6      input_0_output               64/256      activations/**default**   float         float32   /input    
+7      conv1d_conv2d_output         64/256      activations/**default**   float         float32             
+8      conv1d_output                64/256      activations/**default**   float         float32             
+9      average_pooling1d_output     60/240      activations/**default**   float         float32             
+10     conv1d_1_conv2d_output       60/240      activations/**default**   float         float32             
+------ ---------------------------- ----------- ------------------------- ------------- --------- --------- 
+
+C-Layers (6)
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+c_id   name (*_layer)        id   layer_type   macc   rom   tensors                         shape (array id)   
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+0      conv1d_conv2d         0    conv2d       772    208   I: input_0_output               (1,16,4) (6)       
+                                                            W: conv1d_conv2d_weights        (4,3,1,4) (2)      
+                                                            W: conv1d_conv2d_bias           (4,) (3)           
+                                                            O: conv1d_conv2d_output         (1,16,4) (7)       
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+1      conv1d                0    nl           64     0     I: conv1d_conv2d_output         (1,16,4) (7)       
+                                                            O: conv1d_output                (1,16,4) (8)       
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+2      average_pooling1d     1    pool         120    0     I: conv1d_output                (1,16,4) (8)       
+                                                            O: average_pooling1d_output     (1,15,4) (9)       
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+3      conv1d_1_conv2d       2    conv2d       724    208   I: average_pooling1d_output     (1,15,4) (9)       
+                                                            W: conv1d_1_conv2d_weights      (4,3,1,4) (4)      
+                                                            W: conv1d_1_conv2d_bias         (4,) (5)           
+                                                            O: conv1d_1_conv2d_output       (1,15,4) (10)      
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+4      conv1d_1              2    nl           60     0     I: conv1d_1_conv2d_output       (1,15,4) (10)      
+                                                            O: conv1d_1_output              (1,15,4) (0)       
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+5      average_pooling1d_1   3    pool         112    0     I: conv1d_1_output              (1,15,4) (0)       
+                                                            O: average_pooling1d_1_output   (1,14,4) (1)       
+------ --------------------- ---- ------------ ------ ----- ------------------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ ---------------------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)                      #op           type   #param   sparsity 
+------- ------ ---------------------------- ------- -------------- -------- ---------- 
+0       0      conv1d_conv2d (conv2d)           772   smul_f32_f32       52     0.0000 
+1       0      conv1d (nl)                       64     op_f32_f32          
+2       1      average_pooling1d (pool)         120     op_f32_f32          
+3       2      conv1d_1_conv2d (conv2d)         724   smul_f32_f32       52     0.0000 
+4       2      conv1d_1 (nl)                     60     op_f32_f32          
+5       3      average_pooling1d_1 (pool)       112     op_f32_f32          
+------- ------ ---------------------------- ------- -------------- -------- ---------- 
+total                                         1,852                     104     0.0000 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       1,496       80.8% 
+op_f32_f32           356       19.2% 
+
+Complexity report (model)
+------ --------------------- ------------------------- ------------------------- -------- 
+m_id   name                  c_macc                    c_rom                     c_id     
+------ --------------------- ------------------------- ------------------------- -------- 
+0      input_0               ||||||||||||||||  45.1%   ||||||||||||||||  50.0%   [0, 1]   
+1      average_pooling1d     |||                6.5%   |                  0.0%   [2]      
+2      conv1d_1_conv2d       |||||||||||||||   42.3%   ||||||||||||||||  50.0%   [3, 4]   
+3      average_pooling1d_1   |||                6.0%   |                  0.0%   [5]      
+------ --------------------- ------------------------- ------------------------- -------- 
+macc=1,852 weights=416 act=416 ram_io=0
+
+Generated files (7)
+----------------------------------------------------------------------- 
+C:\Users\longyx\.stm32cubemx\network_output\network_f01_config.h        
+C:\Users\longyx\.stm32cubemx\network_output\network_f01.h               
+C:\Users\longyx\.stm32cubemx\network_output\network_f01.c               
+C:\Users\longyx\.stm32cubemx\network_output\network_f01_data_params.h   
+C:\Users\longyx\.stm32cubemx\network_output\network_f01_data_params.c   
+C:\Users\longyx\.stm32cubemx\network_output\network_f01_data.h          
+C:\Users\longyx\.stm32cubemx\network_output\network_f01_data.c          

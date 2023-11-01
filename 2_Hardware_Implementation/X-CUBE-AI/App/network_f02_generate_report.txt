@@ -1,0 +1,109 @@
+Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
+Created date          : 2023-11-01 15:46:25
+Parameters            : generate --name network_f02 -m C:/Users/longyx/Desktop/lxy“∆÷≤/kmodel_2.keras --type keras --compression none --verbosity 1 --workspace C:\Users\longyx\AppData\Local\Temp\mxAI_workspace23362781530650016866534678064460138 --output C:\Users\longyx\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs
+
+Exec/report summary (generate)
+--------------------------------------------------------------------------------------------------------------
+model file         :   C:\Users\longyx\Desktop\lxy“∆÷≤\kmodel_2.keras                                           
+type               :   keras                                                                                  
+c_name             :   network_f02                                                                            
+compression        :   none                                                                                   
+options            :   allocate-inputs, allocate-outputs                                                      
+optimization       :   balanced                                                                               
+target/series      :   stm32h7                                                                                
+workspace dir      :   C:\Users\longyx\AppData\Local\Temp\mxAI_workspace23362781530650016866534678064460138   
+output dir         :   C:\Users\longyx\.stm32cubemx\network_output                                            
+model_fmt          :   float                                                                                  
+model_name         :   kmodel_2                                                                               
+model_hash         :   f3d048fb64989b525e5abcc7a574fc01                                                       
+params #           :   2,736 items (10.69 KiB)                                                                
+--------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input_0' (domain:activations/**default**)                                             
+                   :   56 items, 224 B, ai_float, float, (1,4,14)                                             
+output 1/1         :   'dense_dense' (domain:activations/**default**)                                         
+                   :   48 items, 192 B, ai_float, float, (1,48)                                               
+macc               :   2,736                                                                                  
+weights (ro)       :   10,944 B (10.69 KiB) (1 segment)                                                       
+activations (rw)   :   416 B (416 B) (1 segment) *                                                            
+ram (total)        :   416 B (416 B) = 416 + 0 + 0                                                            
+--------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - kmodel_2 ['input_0'] ['dense_dense']
+------ ---------------------------- ----------------------- -------------- ------- -------------- --- -------- -------- ------------------ 
+m_id   layer (type,original)        oshape                  param/size        macc   connected to   | c_size   c_macc   c_type             
+------ ---------------------------- ----------------------- -------------- ------- -------------- --- -------- -------- ------------------ 
+0      input_0 (Input, None)        [b:None,h:4,h:4,c:14]                                           |                   
+       flatten (Reshape, Flatten)   [b:None,c:56]                                         input_0   |                   
+------ ---------------------------- ----------------------- -------------- ------- -------------- --- -------- -------- ------------------ 
+1      dense_dense (Dense, Dense)   [b:None,c:48]           2,736/10,944     2,736        flatten   |                   dense_of32[o][0]   
+------ ---------------------------- ----------------------- -------------- ------- -------------- --- -------- -------- ------------------ 
+model/c-model: macc=2,736/2,736  weights=10,944/10,944  activations=--/416 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : kmodel_2
+c-name                : network_f02
+c-node #              : 1
+c-array #             : 4
+activations size      : 416 (1 segment)
+weights size          : 10944 (1 segment)
+macc                  : 2736
+inputs                : ['input_0_output']
+outputs               : ['dense_dense_output']
+
+C-Arrays (4)
+------ --------------------- ------------ ------------------------- ------------- --------- --------- 
+c_id   name (*_array)        item/size    domain/mem-pool           c-type        fmt       comment   
+------ --------------------- ------------ ------------------------- ------------- --------- --------- 
+0      input_0_output        56/224       activations/**default**   float         float32   /input    
+1      dense_dense_output    48/192       activations/**default**   float         float32   /output   
+2      dense_dense_weights   2688/10752   weights/weights           const float   float32             
+3      dense_dense_bias      48/192       weights/weights           const float   float32             
+------ --------------------- ------------ ------------------------- ------------- --------- --------- 
+
+C-Layers (1)
+------ ---------------- ---- ------------ ------ ------- ------------------------ ------------------ 
+c_id   name (*_layer)   id   layer_type   macc   rom     tensors                  shape (array id)   
+------ ---------------- ---- ------------ ------ ------- ------------------------ ------------------ 
+0      dense_dense      1    dense        2736   10944   I: input_0_output0       (1,56) (0)         
+                                                         W: dense_dense_weights   (56,48) (2)        
+                                                         W: dense_dense_bias      (48,) (3)          
+                                                         O: dense_dense_output    (1,48) (1)         
+------ ---------------- ---- ------------ ------ ------- ------------------------ ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ --------------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)               #op           type   #param   sparsity 
+------- ------ --------------------- ------- -------------- -------- ---------- 
+0       1      dense_dense (dense)     2,736   smul_f32_f32    2,736     0.0000 
+------- ------ --------------------- ------- -------------- -------- ---------- 
+total                                  2,736                   2,736     0.0000 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       2,736      100.0% 
+
+Complexity report (model)
+------ ------------- ------------------------- ------------------------- ------ 
+m_id   name          c_macc                    c_rom                     c_id   
+------ ------------- ------------------------- ------------------------- ------ 
+1      dense_dense   |||||||||||||||| 100.0%   |||||||||||||||| 100.0%   [0]    
+------ ------------- ------------------------- ------------------------- ------ 
+macc=2,736 weights=10,944 act=416 ram_io=0
+
+Generated files (7)
+----------------------------------------------------------------------- 
+C:\Users\longyx\.stm32cubemx\network_output\network_f02_config.h        
+C:\Users\longyx\.stm32cubemx\network_output\network_f02.h               
+C:\Users\longyx\.stm32cubemx\network_output\network_f02.c               
+C:\Users\longyx\.stm32cubemx\network_output\network_f02_data_params.h   
+C:\Users\longyx\.stm32cubemx\network_output\network_f02_data_params.c   
+C:\Users\longyx\.stm32cubemx\network_output\network_f02_data.h          
+C:\Users\longyx\.stm32cubemx\network_output\network_f02_data.c          

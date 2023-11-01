@@ -1,0 +1,336 @@
+Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
+Created date          : 2023-11-01 15:45:54
+Parameters            : generate --name network_fu -m C:/Users/longyx/Desktop/lxy“∆÷≤/fu.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\longyx\AppData\Local\Temp\mxAI_workspace233595291624500905490293840265783 --output C:\Users\longyx\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs
+
+Exec/report summary (generate)
+------------------------------------------------------------------------------------------------------------
+model file         :   C:\Users\longyx\Desktop\lxy“∆÷≤\fu.onnx                                                
+type               :   onnx                                                                                 
+c_name             :   network_fu                                                                           
+compression        :   none                                                                                 
+options            :   allocate-inputs, allocate-outputs                                                    
+optimization       :   balanced                                                                             
+target/series      :   stm32h7                                                                              
+workspace dir      :   C:\Users\longyx\AppData\Local\Temp\mxAI_workspace233595291624500905490293840265783   
+output dir         :   C:\Users\longyx\.stm32cubemx\network_output                                          
+model_fmt          :   float                                                                                
+model_name         :   fu                                                                                   
+model_hash         :   c01ff3e8164259be14fa1b2652f9e00c                                                     
+params #           :   7,593 items (29.66 KiB)                                                              
+------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input' (domain:activations/**default**)                                             
+                   :   10 items, 40 B, ai_float, float, (1,10)                                              
+output 1/1         :   'output' (domain:activations/**default**)                                            
+                   :   48 items, 192 B, ai_float, float, (1,48)                                             
+macc               :   9,024                                                                                
+weights (ro)       :   30,372 B (29.66 KiB) (1 segment)                                                     
+activations (rw)   :   384 B (384 B) (1 segment) *                                                          
+ram (total)        :   384 B (384 B) = 384 + 0 + 0                                                          
+------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - fu ['input'] ['output']
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+m_id   layer (type,original)                        oshape             param/size       macc             connected to   | c_size            c_macc         c_type                 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+0      input_layer_weight (Placeholder, Gemm)       [h:48,h:48,c:10]   480/1,920                                        | -1,920(-100.0%)                  
+       input_layer_bias (Placeholder, Gemm)         [c:48]             48/192                                           | -192(-100.0%)                    
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+2      onnxDiv_10 (Placeholder, Div)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+5      onnxAdd_13 (Placeholder, Add)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+8      onnxMul_16 (Placeholder, Mul)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+9      hidden_layers_0_weight (Placeholder, Gemm)   [h:48,h:48,c:48]   2,304/9,216                                      | -9,212(-100.0%)   +48(+100.0%)   eltwise/mul_of32[5]    
+       hidden_layers_0_bias (Placeholder, Gemm)     [c:48]             48/192                                           | -192(-100.0%)                    
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+11     onnxDiv_19 (Placeholder, Div)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+14     onnxAdd_22 (Placeholder, Add)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+17     onnxMul_25 (Placeholder, Mul)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+18     hidden_layers_1_weight (Placeholder, Gemm)   [h:48,h:48,c:48]   2,304/9,216                                      | -9,212(-100.0%)   +48(+100.0%)   eltwise/mul_of32[11]   
+       hidden_layers_1_bias (Placeholder, Gemm)     [c:48]             48/192                                           | -192(-100.0%)                    
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+20     onnxDiv_28 (Placeholder, Div)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+23     onnxAdd_31 (Placeholder, Add)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+26     onnxMul_34 (Placeholder, Mul)                []                 1/4                                              | -4(-100.0%)                      
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+27     output_layer_weight (Placeholder, Gemm)      [h:48,h:48,c:48]   2,304/9,216                                      | -9,212(-100.0%)   +48(+100.0%)   eltwise/mul_of32[17]   
+       output_layer_bias (Placeholder, Gemm)        [c:48]             48/192                                           | -192(-100.0%)                    
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+0      input (Input, )                              [b:1,c:10]                                                          |                                  
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+1      onnxDiv_9 (Gemm, Gemm)                       [b:1,c:48]                           528                    input   | +2,112(+100.0%)                  dense_of32[0]          
+                                                                                                   input_layer_weight   | 
+                                                                                                     input_layer_bias   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+3      onnxErf_11 (Eltwise, Div)                    [b:1,c:48]                           240                onnxDiv_9   | +4(+100.0%)                      eltwise/div_of32[1]    
+                                                                                                           onnxDiv_10   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+4      onnxAdd_12 (Nonlinearity, Erf)               [b:1,c:48]                            96               onnxErf_11   |                                  nl_of32[2]             
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+6      onnxMul_14 (Eltwise, Add)                    [b:1,c:48]                            48               onnxAdd_12   | +4(+100.0%)                      eltwise/sum_of32[3]    
+                                                                                                           onnxAdd_13   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+7      onnxMul_15 (Eltwise, Mul)                    [b:1,c:48]                            48                onnxDiv_9   |                                  eltwise/mul_of32[4]    
+                                                                                                           onnxMul_14   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+9      onnxGemm_17 (Eltwise, Mul)                   [b:1,c:48]                            48               onnxMul_15   |                   -48(-100.0%)   
+                                                                                                           onnxMul_16   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+10     onnxDiv_18 (Gemm, Gemm)                      [b:1,c:48]                         2,352              onnxGemm_17   | +9,408(+100.0%)                  dense_of32[6]          
+                                                                                               hidden_layers_0_weight   | 
+                                                                                                 hidden_layers_0_bias   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+12     onnxErf_20 (Eltwise, Div)                    [b:1,c:48]                           240               onnxDiv_18   | +4(+100.0%)                      eltwise/div_of32[7]    
+                                                                                                           onnxDiv_19   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+13     onnxAdd_21 (Nonlinearity, Erf)               [b:1,c:48]                            96               onnxErf_20   |                                  nl_of32[8]             
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+15     onnxMul_23 (Eltwise, Add)                    [b:1,c:48]                            48               onnxAdd_21   | +4(+100.0%)                      eltwise/sum_of32[9]    
+                                                                                                           onnxAdd_22   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+16     onnxMul_24 (Eltwise, Mul)                    [b:1,c:48]                            48               onnxDiv_18   |                                  eltwise/mul_of32[10]   
+                                                                                                           onnxMul_23   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+18     onnxGemm_26 (Eltwise, Mul)                   [b:1,c:48]                            48               onnxMul_24   |                   -48(-100.0%)   
+                                                                                                           onnxMul_25   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+19     onnxDiv_27 (Gemm, Gemm)                      [b:1,c:48]                         2,352              onnxGemm_26   | +9,408(+100.0%)                  dense_of32[12]         
+                                                                                               hidden_layers_1_weight   | 
+                                                                                                 hidden_layers_1_bias   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+21     onnxErf_29 (Eltwise, Div)                    [b:1,c:48]                           240               onnxDiv_27   | +4(+100.0%)                      eltwise/div_of32[13]   
+                                                                                                           onnxDiv_28   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+22     onnxAdd_30 (Nonlinearity, Erf)               [b:1,c:48]                            96               onnxErf_29   |                                  nl_of32[14]            
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+24     onnxMul_32 (Eltwise, Add)                    [b:1,c:48]                            48               onnxAdd_30   | +4(+100.0%)                      eltwise/sum_of32[15]   
+                                                                                                           onnxAdd_31   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+25     onnxMul_33 (Eltwise, Mul)                    [b:1,c:48]                            48               onnxDiv_27   |                                  eltwise/mul_of32[16]   
+                                                                                                           onnxMul_32   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+27     onnxGemm_35 (Eltwise, Mul)                   [b:1,c:48]                            48               onnxMul_33   |                   -48(-100.0%)   
+                                                                                                           onnxMul_34   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+28     output (Gemm, Gemm)                          [b:1,c:48]                         2,352              onnxGemm_35   | +9,408(+100.0%)                  dense_of32[o][18]      
+                                                                                                  output_layer_weight   | 
+                                                                                                    output_layer_bias   | 
+------ -------------------------------------------- ------------------ ------------- ------- ------------------------ --- ----------------- -------------- ---------------------- 
+model/c-model: macc=9,024/9,024  weights=30,372/30,372  activations=--/384 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : fu
+c-name                : network_fu
+c-node #              : 19
+c-array #             : 37
+activations size      : 384 (1 segment)
+weights size          : 30372 (1 segment)
+macc                  : 9024
+inputs                : ['input_output']
+outputs               : ['output_output']
+
+C-Arrays (37)
+------ -------------------- ----------- ------------------------- ------------- --------- --------- 
+c_id   name (*_array)       item/size   domain/mem-pool           c-type        fmt       comment   
+------ -------------------- ----------- ------------------------- ------------- --------- --------- 
+0      onnxDiv_27_weights   2304/9216   weights/weights           const float   float32             
+1      onnxDiv_27_bias      48/192      weights/weights           const float   float32             
+2      output_weights       2304/9216   weights/weights           const float   float32             
+3      output_bias          48/192      weights/weights           const float   float32             
+4      input_output         10/40       activations/**default**   float         float32   /input    
+5      onnxDiv_9_output     48/192      activations/**default**   float         float32             
+6      onnxErf_11_output    48/192      activations/**default**   float         float32             
+7      onnxAdd_12_output    48/192      activations/**default**   float         float32             
+8      onnxMul_14_output    48/192      activations/**default**   float         float32             
+9      onnxMul_15_output    48/192      activations/**default**   float         float32             
+10     onnxGemm_17_output   48/192      activations/**default**   float         float32             
+11     onnxDiv_18_output    48/192      activations/**default**   float         float32             
+12     onnxErf_20_output    48/192      activations/**default**   float         float32             
+13     onnxAdd_21_output    48/192      activations/**default**   float         float32             
+14     onnxMul_23_output    48/192      activations/**default**   float         float32             
+15     onnxMul_24_output    48/192      activations/**default**   float         float32             
+16     onnxGemm_26_output   48/192      activations/**default**   float         float32             
+17     onnxDiv_27_output    48/192      activations/**default**   float         float32             
+18     onnxErf_29_output    48/192      activations/**default**   float         float32             
+19     onnxAdd_30_output    48/192      activations/**default**   float         float32             
+20     onnxMul_32_output    48/192      activations/**default**   float         float32             
+21     onnxMul_33_output    48/192      activations/**default**   float         float32             
+22     onnxGemm_35_output   48/192      activations/**default**   float         float32             
+23     output_output        48/192      activations/**default**   float         float32   /output   
+24     onnxDiv_9_weights    480/1920    weights/weights           const float   float32             
+25     onnxDiv_9_bias       48/192      weights/weights           const float   float32             
+26     onnxMul_34           1/4         weights/weights           const float   float32             
+27     onnxAdd_31           1/4         weights/weights           const float   float32             
+28     onnxDiv_28           1/4         weights/weights           const float   float32             
+29     onnxMul_25           1/4         weights/weights           const float   float32             
+30     onnxAdd_22           1/4         weights/weights           const float   float32             
+31     onnxDiv_19           1/4         weights/weights           const float   float32             
+32     onnxMul_16           1/4         weights/weights           const float   float32             
+33     onnxAdd_13           1/4         weights/weights           const float   float32             
+34     onnxDiv_10           1/4         weights/weights           const float   float32             
+35     onnxDiv_18_weights   2304/9216   weights/weights           const float   float32             
+36     onnxDiv_18_bias      48/192      weights/weights           const float   float32             
+------ -------------------- ----------- ------------------------- ------------- --------- --------- 
+
+C-Layers (19)
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type     macc   rom    tensors                 shape (array id)   
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+0      onnxDiv_9        1    dense          528    2112   I: input_output         (1,10) (4)         
+                                                          W: onnxDiv_9_weights    (10,48) (24)       
+                                                          W: onnxDiv_9_bias       (48,) (25)         
+                                                          O: onnxDiv_9_output     (1,48) (5)         
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+1      onnxErf_11       3    eltwise/div    240    4      I: onnxDiv_9_output     (1,48) (5)         
+                                                          I: onnxDiv_10           (1,) (34)          
+                                                          O: onnxErf_11_output    (1,48) (6)         
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+2      onnxAdd_12       4    nl             96     0      I: onnxErf_11_output    (1,48) (6)         
+                                                          O: onnxAdd_12_output    (1,48) (7)         
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+3      onnxMul_14       6    eltwise/sum    48     4      I: onnxAdd_12_output    (1,48) (7)         
+                                                          I: onnxAdd_13           (1,) (33)          
+                                                          O: onnxMul_14_output    (1,48) (8)         
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+4      onnxMul_15       7    eltwise/mul    48     0      I: onnxDiv_9_output     (1,48) (5)         
+                                                          I: onnxMul_14_output    (1,48) (8)         
+                                                          O: onnxMul_15_output    (1,48) (9)         
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+5      onnxGemm_17      9    eltwise/mul    48     4      I: onnxMul_15_output    (1,48) (9)         
+                                                          I: onnxMul_16           (1,) (32)          
+                                                          O: onnxGemm_17_output   (1,48) (10)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+6      onnxDiv_18       10   dense          2352   9408   I: onnxGemm_17_output   (1,48) (10)        
+                                                          W: onnxDiv_18_weights   (48,48) (35)       
+                                                          W: onnxDiv_18_bias      (48,) (36)         
+                                                          O: onnxDiv_18_output    (1,48) (11)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+7      onnxErf_20       12   eltwise/div    240    4      I: onnxDiv_18_output    (1,48) (11)        
+                                                          I: onnxDiv_19           (1,) (31)          
+                                                          O: onnxErf_20_output    (1,48) (12)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+8      onnxAdd_21       13   nl             96     0      I: onnxErf_20_output    (1,48) (12)        
+                                                          O: onnxAdd_21_output    (1,48) (13)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+9      onnxMul_23       15   eltwise/sum    48     4      I: onnxAdd_21_output    (1,48) (13)        
+                                                          I: onnxAdd_22           (1,) (30)          
+                                                          O: onnxMul_23_output    (1,48) (14)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+10     onnxMul_24       16   eltwise/mul    48     0      I: onnxDiv_18_output    (1,48) (11)        
+                                                          I: onnxMul_23_output    (1,48) (14)        
+                                                          O: onnxMul_24_output    (1,48) (15)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+11     onnxGemm_26      18   eltwise/mul    48     4      I: onnxMul_24_output    (1,48) (15)        
+                                                          I: onnxMul_25           (1,) (29)          
+                                                          O: onnxGemm_26_output   (1,48) (16)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+12     onnxDiv_27       19   dense          2352   9408   I: onnxGemm_26_output   (1,48) (16)        
+                                                          W: onnxDiv_27_weights   (48,48) (0)        
+                                                          W: onnxDiv_27_bias      (48,) (1)          
+                                                          O: onnxDiv_27_output    (1,48) (17)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+13     onnxErf_29       21   eltwise/div    240    4      I: onnxDiv_27_output    (1,48) (17)        
+                                                          I: onnxDiv_28           (1,) (28)          
+                                                          O: onnxErf_29_output    (1,48) (18)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+14     onnxAdd_30       22   nl             96     0      I: onnxErf_29_output    (1,48) (18)        
+                                                          O: onnxAdd_30_output    (1,48) (19)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+15     onnxMul_32       24   eltwise/sum    48     4      I: onnxAdd_30_output    (1,48) (19)        
+                                                          I: onnxAdd_31           (1,) (27)          
+                                                          O: onnxMul_32_output    (1,48) (20)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+16     onnxMul_33       25   eltwise/mul    48     0      I: onnxDiv_27_output    (1,48) (17)        
+                                                          I: onnxMul_32_output    (1,48) (20)        
+                                                          O: onnxMul_33_output    (1,48) (21)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+17     onnxGemm_35      27   eltwise/mul    48     4      I: onnxMul_33_output    (1,48) (21)        
+                                                          I: onnxMul_34           (1,) (26)          
+                                                          O: onnxGemm_35_output   (1,48) (22)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+18     output           28   dense          2352   9408   I: onnxGemm_35_output   (1,48) (22)        
+                                                          W: output_weights       (48,48) (2)        
+                                                          W: output_bias          (48,) (3)          
+                                                          O: output_output        (1,48) (23)        
+------ ---------------- ---- -------------- ------ ------ ----------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ --------------------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)                     #op           type   #param   sparsity 
+------- ------ --------------------------- ------- -------------- -------- ---------- 
+0       1      onnxDiv_9 (dense)               528   smul_f32_f32      528     0.0000 
+1       3      onnxErf_11 (eltwise/div)        240     op_f32_f32        1     0.0000 
+2       4      onnxAdd_12 (nl)                  96     op_f32_f32          
+3       6      onnxMul_14 (eltwise/sum)         48     op_f32_f32        1     0.0000 
+4       7      onnxMul_15 (eltwise/mul)         48     op_f32_f32          
+5       9      onnxGemm_17 (eltwise/mul)        48     op_f32_f32        1     0.0000 
+6       10     onnxDiv_18 (dense)            2,352   smul_f32_f32    2,352     0.0000 
+7       12     onnxErf_20 (eltwise/div)        240     op_f32_f32        1     0.0000 
+8       13     onnxAdd_21 (nl)                  96     op_f32_f32          
+9       15     onnxMul_23 (eltwise/sum)         48     op_f32_f32        1     0.0000 
+10      16     onnxMul_24 (eltwise/mul)         48     op_f32_f32          
+11      18     onnxGemm_26 (eltwise/mul)        48     op_f32_f32        1     0.0000 
+12      19     onnxDiv_27 (dense)            2,352   smul_f32_f32    2,352     0.0000 
+13      21     onnxErf_29 (eltwise/div)        240     op_f32_f32        1     0.0000 
+14      22     onnxAdd_30 (nl)                  96     op_f32_f32          
+15      24     onnxMul_32 (eltwise/sum)         48     op_f32_f32        1     0.0000 
+16      25     onnxMul_33 (eltwise/mul)         48     op_f32_f32          
+17      27     onnxGemm_35 (eltwise/mul)        48     op_f32_f32        1     0.0000 
+18      28     output (dense)                2,352   smul_f32_f32    2,352     0.0000 
+------- ------ --------------------------- ------- -------------- -------- ---------- 
+total                                        9,024                   7,593     0.0000 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       7,584       84.0% 
+op_f32_f32         1,440       16.0% 
+
+Complexity report (model)
+------ ------------------------ ------------------------- ------------------------- ------ 
+m_id   name                     c_macc                    c_rom                     c_id   
+------ ------------------------ ------------------------- ------------------------- ------ 
+9      hidden_layers_0_weight   |                  0.5%   |                  0.0%   [5]    
+18     hidden_layers_1_weight   |                  0.5%   |                  0.0%   [11]   
+27     output_layer_weight      |                  0.5%   |                  0.0%   [17]   
+1      onnxDiv_9                ||||               5.9%   ||||               7.0%   [0]    
+3      onnxErf_11               ||                 2.7%   |                  0.0%   [1]    
+4      onnxAdd_12               |                  1.1%   |                  0.0%   [2]    
+6      onnxMul_14               |                  0.5%   |                  0.0%   [3]    
+7      onnxMul_15               |                  0.5%   |                  0.0%   [4]    
+10     onnxDiv_18               ||||||||||||||||  26.1%   ||||||||||||||||  31.0%   [6]    
+12     onnxErf_20               ||                 2.7%   |                  0.0%   [7]    
+13     onnxAdd_21               |                  1.1%   |                  0.0%   [8]    
+15     onnxMul_23               |                  0.5%   |                  0.0%   [9]    
+16     onnxMul_24               |                  0.5%   |                  0.0%   [10]   
+19     onnxDiv_27               ||||||||||||||||  26.1%   ||||||||||||||||  31.0%   [12]   
+21     onnxErf_29               ||                 2.7%   |                  0.0%   [13]   
+22     onnxAdd_30               |                  1.1%   |                  0.0%   [14]   
+24     onnxMul_32               |                  0.5%   |                  0.0%   [15]   
+25     onnxMul_33               |                  0.5%   |                  0.0%   [16]   
+28     output                   ||||||||||||||||  26.1%   ||||||||||||||||  31.0%   [18]   
+------ ------------------------ ------------------------- ------------------------- ------ 
+macc=9,024 weights=30,372 act=384 ram_io=0
+
+Generated files (7)
+---------------------------------------------------------------------- 
+C:\Users\longyx\.stm32cubemx\network_output\network_fu_config.h        
+C:\Users\longyx\.stm32cubemx\network_output\network_fu.h               
+C:\Users\longyx\.stm32cubemx\network_output\network_fu.c               
+C:\Users\longyx\.stm32cubemx\network_output\network_fu_data_params.h   
+C:\Users\longyx\.stm32cubemx\network_output\network_fu_data_params.c   
+C:\Users\longyx\.stm32cubemx\network_output\network_fu_data.h          
+C:\Users\longyx\.stm32cubemx\network_output\network_fu_data.c          

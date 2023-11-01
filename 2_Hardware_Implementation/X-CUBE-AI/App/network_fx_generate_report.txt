@@ -1,0 +1,109 @@
+Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
+Created date          : 2023-11-01 15:46:04
+Parameters            : generate --name network_fx -m C:/Users/longyx/Desktop/lxyÒÆÖ²/ÐÂ/fx.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\longyx\AppData\Local\Temp\mxAI_workspace23360636903850014568199046708236135 --output C:\Users\longyx\.stm32cubemx\network_output --allocate-inputs --series stm32h7 --allocate-outputs
+
+Exec/report summary (generate)
+--------------------------------------------------------------------------------------------------------------
+model file         :   C:\Users\longyx\Desktop\lxyÒÆÖ²\ÐÂ\fx.onnx                                                
+type               :   onnx                                                                                   
+c_name             :   network_fx                                                                             
+compression        :   none                                                                                   
+options            :   allocate-inputs, allocate-outputs                                                      
+optimization       :   balanced                                                                               
+target/series      :   stm32h7                                                                                
+workspace dir      :   C:\Users\longyx\AppData\Local\Temp\mxAI_workspace23360636903850014568199046708236135   
+output dir         :   C:\Users\longyx\.stm32cubemx\network_output                                            
+model_fmt          :   float                                                                                  
+model_name         :   fx                                                                                     
+model_hash         :   23a1874f502bde3ef554a04294283fa5                                                       
+params #           :   2,304 items (9.00 KiB)                                                                 
+--------------------------------------------------------------------------------------------------------------
+input 1/1          :   'input' (domain:activations/**default**)                                               
+                   :   48 items, 192 B, ai_float, float, (1,48)                                               
+output 1/1         :   'output' (domain:activations/**default**)                                              
+                   :   48 items, 192 B, ai_float, float, (1,48)                                               
+macc               :   2,304                                                                                  
+weights (ro)       :   9,216 B (9.00 KiB) (1 segment)                                                         
+activations (rw)   :   384 B (384 B) (1 segment) *                                                            
+ram (total)        :   384 B (384 B) = 384 + 0 + 0                                                            
+--------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - fx ['input'] ['output']
+------ ------------------------------------ ------------------ ------------- ------- -------------- --- ----------------- ------------ ------------------ 
+m_id   layer (type,original)                oshape             param/size       macc   connected to   | c_size            c_macc       c_type             
+------ ------------------------------------ ------------------ ------------- ------- -------------- --- ----------------- ------------ ------------------ 
+1      onnxMatMul_1 (Placeholder, MatMul)   [h:48,h:48,c:48]   2,304/9,216                            | -9,216(-100.0%)                
+------ ------------------------------------ ------------------ ------------- ------- -------------- --- ----------------- ------------ ------------------ 
+0      input (Input, )                      [b:1,c:48]                                                |                                
+------ ------------------------------------ ------------------ ------------- ------- -------------- --- ----------------- ------------ ------------------ 
+2      output (Gemm, MatMul)                [b:1,c:48]                         2,352          input   | +9,216(+100.0%)   -48(-2.0%)   dense_of32[o][0]   
+                                                                                       onnxMatMul_1   | 
+------ ------------------------------------ ------------------ ------------- ------- -------------- --- ----------------- ------------ ------------------ 
+model/c-model: macc=2,352/2,304 -48(-2.0%) weights=9,216/9,216  activations=--/384 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : fx
+c-name                : network_fx
+c-node #              : 1
+c-array #             : 3
+activations size      : 384 (1 segment)
+weights size          : 9216 (1 segment)
+macc                  : 2304
+inputs                : ['input_output']
+outputs               : ['output_output']
+
+C-Arrays (3)
+------ ---------------- ----------- ------------------------- ------------- --------- --------- 
+c_id   name (*_array)   item/size   domain/mem-pool           c-type        fmt       comment   
+------ ---------------- ----------- ------------------------- ------------- --------- --------- 
+0      output_output    48/192      activations/**default**   float         float32   /output   
+1      output_weights   2304/9216   weights/weights           const float   float32             
+2      input_output     48/192      activations/**default**   float         float32   /input    
+------ ---------------- ----------- ------------------------- ------------- --------- --------- 
+
+C-Layers (1)
+------ ---------------- ---- ------------ ------ ------ ------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type   macc   rom    tensors             shape (array id)   
+------ ---------------- ---- ------------ ------ ------ ------------------- ------------------ 
+0      output           2    dense        2304   9216   I: input_output     (1,48) (2)         
+                                                        W: output_weights   (48,48) (1)        
+                                                        O: output_output    (1,48) (0)         
+------ ---------------- ---- ------------ ------ ------ ------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ ---------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)          #op           type   #param   sparsity 
+------- ------ ---------------- ------- -------------- -------- ---------- 
+0       2      output (dense)     2,304   smul_f32_f32    2,304     0.0000 
+------- ------ ---------------- ------- -------------- -------- ---------- 
+total                             2,304                   2,304     0.0000 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       2,304      100.0% 
+
+Complexity report (model)
+------ -------- ------------------------- ------------------------- ------ 
+m_id   name     c_macc                    c_rom                     c_id   
+------ -------- ------------------------- ------------------------- ------ 
+2      output   |||||||||||||||| 100.0%   |||||||||||||||| 100.0%   [0]    
+------ -------- ------------------------- ------------------------- ------ 
+macc=2,304 weights=9,216 act=384 ram_io=0
+
+Generated files (7)
+---------------------------------------------------------------------- 
+C:\Users\longyx\.stm32cubemx\network_output\network_fx_config.h        
+C:\Users\longyx\.stm32cubemx\network_output\network_fx.h               
+C:\Users\longyx\.stm32cubemx\network_output\network_fx.c               
+C:\Users\longyx\.stm32cubemx\network_output\network_fx_data_params.h   
+C:\Users\longyx\.stm32cubemx\network_output\network_fx_data_params.c   
+C:\Users\longyx\.stm32cubemx\network_output\network_fx_data.h          
+C:\Users\longyx\.stm32cubemx\network_output\network_fx_data.c          
