@@ -20,6 +20,12 @@ Go into the folder *1_Software_code*, and
 ```
 python Train.py
 ```
+# Hardware deployment process
+[**Detail Guide**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/README.md)
+<p align="center">
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png" />
+</p>
+
 # Experience result
 ## Prediction
 <p align="center">
