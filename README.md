@@ -1,3 +1,7 @@
+![Static Badge](https://img.shields.io/badge/Language-C-green)
+![Static Badge](https://img.shields.io/badge/Language-Python-green)
+![Static Badge](https://img.shields.io/badge/Platform-Win_Mac-pink)
+![GitHub all releases](https://img.shields.io/github/downloads/ms140429/Explainable_Neural_Dynamics_Model/total)
 # Structured Linear Neural Dynamics model
 This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
 <p align="center">
@@ -21,15 +25,15 @@ Go into the folder *1_Software_code*, and
 python Train.py
 ```
 # Hardware deployment process
-[**Detail Guide**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/README.md)
+Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/README.md).:hammer::hammer:
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png"  width="500px"/>
 </p>
 
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred1.png" />
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred1.png"/>
 </p>
 
 ## Decoupling
