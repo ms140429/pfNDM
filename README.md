@@ -24,7 +24,7 @@ Go into the folder *1_Software_code*, and
 ```
 python Train.py
 ```
-# Hardware deployment process
+# Hardware deployment
 Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/README.md).:hammer::hammer:
 <p align="center">
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png"  width="500px"/>
