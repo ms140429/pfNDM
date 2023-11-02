@@ -8,8 +8,9 @@ This repository includes the code for the paper "Explainable Neural Dynamics Mod
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/frame2.png" width="900px"/>
 </p>
 
-<video width:60% height:auto controls>
-    <source src=".mp4" type="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/TII.mp4" type="video/mp4">
+<video controls>
+    <source src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/TII.mp4" type="video/mp4">
+    Your browser does not support the video tag.
 </video>
 
 # Abstract
