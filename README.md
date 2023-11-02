@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/Platform-Win_Mac-pink)
 ![GitHub all releases](https://img.shields.io/github/downloads/ms140429/Explainable_Neural_Dynamics_Model/total)
 # Structured Linear Neural Dynamics model
-This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction". More details can be found in the [**video**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/TII.mp4).
+This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
 <p align="center">
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/frame2.png" width="900px"/>
 </p>
@@ -29,6 +29,12 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
 <p align="center">
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png"  width="500px"/>
 </p>
+
+<p align="center">
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/video_06.png"  width="700px"/>
+</p>
+
+ More details can be found in the accompanying [**video**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/Hardware demonstration.mp4).
 
 # Experience result
 ## Prediction
