@@ -31,10 +31,10 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
 </p>
 
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/video_06.png"  width="700px"/>
+  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/1.png"  width="700px"/>
 </p>
 
- More details can be found in the accompanying [**video**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/Hardware demonstration.mp4).
+ More details can be found in the accompanying [**video**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/Hardware_demonstration.mp4).
 
 # Experience result
 ## Prediction
