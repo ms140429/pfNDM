@@ -1,7 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/Language-C-green)
 ![Static Badge](https://img.shields.io/badge/Language-Python-green)
 ![Static Badge](https://img.shields.io/badge/Platform-Win_Mac-pink)
-![GitHub all releases](https://img.shields.io/github/downloads/ms140429/Explainable_Neural_Dynamics_Model/total)
+![GitHub all releases](https://img.shields.io/github/downloads/ms140429/Explainable-Neural-Dynamics-Model/total)
 # Explainable Neural Dynamics Models for Motor Temperature Prediction
 This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
 <p align="center">
@@ -13,7 +13,7 @@ The permanent magnet synchronous motor finds extensive use in industrial applica
 
 # Quick start
 ## Dataset
-Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/tree/main/1_Software_code/Data) folder **firstly**!
+Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/Explainable-Neural-Dynamics-Model/tree/main/1_Software_code/Data) folder **firstly**!
 ## Configuration
 Go into the folder *1_Software_code*, and
 ```
@@ -25,7 +25,7 @@ Go into the folder *1_Software_code*, and
 python Train.py
 ```
 # Hardware deployment
-Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/README.md).:hammer::hammer:
+Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/Explainable-Neural-Dynamics-Model/blob/main/2_Hardware_Implementation/README.md).:hammer::hammer:
 <p align="center">
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/flow.png"  width="500px"/>
 </p>
@@ -34,12 +34,12 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/2_Hardware_Implementation/1.png"  width="700px"/>
 </p>
 
- More details can be found in the accompanying [**video**](https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/Hardware_demonstration.mp4).
+ More details can be found in the accompanying [**video**](https://github.com/ms140429/Explainable-Neural-Dynamics-Model/blob/main/Hardware_demonstration.mp4).
 
 # Experience result
 ## Prediction
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/pred1.png"/>
+  <img src="https://github.com/ms140429/Explainable-Neural-Dynamics-Model/blob/main/1_Software_code/pred1.png"/>
 </p>
 
 ## Compared with state-of-the-art methods.
@@ -57,7 +57,7 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
 
 ## Decoupling
 <p align="center">
-  <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/decouple1.png" />
+  <img src="https://github.com/ms140429/Explainable-Neural-Dynamics-Model/blob/main/1_Software_code/decouple1.png" />
 </p>
 
 ## The RAM and FLASH occupations
