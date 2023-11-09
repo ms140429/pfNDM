@@ -83,7 +83,7 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
 [5] Kirchgässner, Wilhelm, Oliver Wallscheid, and Joachim Böcker. "Thermal neural networks: Lumped-parameter thermal modeling with state-space machine learning." Engineering Applications of Artificial Intelligence 117 (2023): 105537.
 # Citation
 ```
-@ARTICLE{9200511,
+@ARTICLE{Liao23Explainable,
   author={Xinyuan Liao and Shaowei Chen and Yunxiang Long and Shuai Zhao},
   title={Explainable Neural Dynamics Models for Motor Temperature Prediction}, 
   year={2023},
