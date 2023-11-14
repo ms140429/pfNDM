@@ -88,5 +88,5 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
   title={Explainable Neural Dynamics Models for Motor Temperature Prediction}, 
   year={2023},
   pages={1-9},
-  doi={10.36227/techrxiv.24525877}}
+  doi={10.36227/techrxiv.24555889}}
 ```
