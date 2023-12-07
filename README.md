@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/Platform-Win_Mac-pink)
 ![GitHub all releases](https://img.shields.io/github/downloads/ms140429/Explainable-Neural-Dynamics-Model/total)
 # Explainable Neural Dynamics Models for Motor Temperature Prediction
-This repository includes the code for the paper "Explainable Neural Dynamics Models for Motor Temperature Prediction".
+This repository includes the code for the paper "[Explainable Neural Dynamics Models for Motor Temperature Prediction](https://www.techrxiv.org/articles/preprint/Explainable_Neural_Dynamics_Models_for_Motor_Temperature_Prediction/24555889)".
 <p align="center">
   <img src="https://github.com/ms140429/Explainable_Neural_Dynamics_Model/blob/main/1_Software_code/frame2.png" width="900px"/>
 </p>
