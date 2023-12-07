@@ -93,14 +93,19 @@ class Dynamic(nn.Module):
             hidden_states (tensor): n_steps * batch_size * output_size
         """
         h = self.fe(x0)
-        hidden_states, output = [h], []
-        nsteps = u.shape[0]
+        hidden_states = [h]
+
+        seq_len, batch_size, input_size = u.size()
+        u = u.reshape(-1, input_size)
+        ut = self.fu(u)
+        ut = ut.reshape(seq_len, batch_size, self.hidden_size)
+
+        nsteps = ut.shape[0]
         for step in range(nsteps):
-            h = self.fx(h)
-            u_t = self.fu(u[step, :, :])
-            h += u_t
-            y = self.fy(h)
+            h = self.fx(hidden_states[-1])
+            h += ut[step, :, :]
             hidden_states.append(h)
-            output.append(y)
-        hidden_states, output = torch.stack(hidden_states), torch.stack(output)
-        return output, hidden_states
+        hidden_states = torch.stack(hidden_states)
+
+        outputs = self.fy(hidden_states[1:, :, :])
+        return outputs, hidden_states
