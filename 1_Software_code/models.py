@@ -99,10 +99,11 @@ class Dynamic(nn.Module):
         u = u.reshape(-1, input_size)
         ut = self.fu(u)
         ut = ut.reshape(seq_len, batch_size, self.hidden_size)
+        state_matrix = self.fx.effective_W()
 
         nsteps = ut.shape[0]
         for step in range(nsteps):
-            h = self.fx(hidden_states[-1])
+            h = torch.matmul(hidden_states[-1], state_matrix)
             h += ut[step, :, :]
             hidden_states.append(h)
         hidden_states = torch.stack(hidden_states)
