@@ -64,7 +64,7 @@ class Dynamic(nn.Module):
         """
         super().__init__()
         assert model in ['linear', 'perron'], 'Model mot support!'
-
+        self.hidden_size = hidden_size
         # fe is f0
         self.fe = ConvNet(output_size, seq_len, hidden_size)
         self.fu = MLP(input_size, hidden_size, hidden_size, nlayers)
