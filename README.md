@@ -31,12 +31,12 @@ python Train.py
 # Hardware deployment
 Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/pfNDM/2_Hardware_Implementation/README.md). :hammer::hammer: The trained pfNDM firstly split into many tiny parts, convolutional neural networks models are converted to .keras models, and others are converted to .onnx models. Then each model is converted into a .c model by Cube.AI. Finally, every model deployed on the microcontroller by Keil.
 <p align="center">
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/flow.png"  width="500px"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/flow.jpg"  width="500px"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/overall.jpg"  width="300px"/>
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/idle.jpg"  width="300px"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/overall.png"  width="350px"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/idle.png"  width="350px"/>
 </p>
 
 The left figure shows the current and voltage of the system at the full running state, and the right figure shows the current and voltage of the system at idle state. According to the current and voltage, the algorithm power can be calculated as 27 mW.
@@ -45,13 +45,13 @@ The left figure shows the current and voltage of the system at the full running 
 ## Estimation and Decoupling
 The first figure is the estimation result and the ground truth, the first row of the second figure is the decoupling result of NDM, and the second row of the second figure is the decoupling result of pfNDM.
 <p align="center">
-  <img src="https://github.com/ms140429/pfNDM/1_Software_code/pred1.png"/>
-  <img src="https://github.com/ms140429/pfNDM/1_Software_code/decouple1.png" />
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/pred1.png"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/decouple1.png" />
 </p>
 
 ## Compared with state-of-the-art methods.
 <div align="center">
-  <img src="https://github.com/ms140429/pfNDM/1_Software_code/comparsion.jpg"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/comparsion.jpg" width="450px"/>
 </div>
 
 ## The RAM and FLASH occupations
