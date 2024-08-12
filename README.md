@@ -5,9 +5,11 @@
 ![Static Badge](https://img.shields.io/badge/Platform-Win_Mac-pink)
 ![GitHub all releases](https://img.shields.io/github/downloads/ms140429/pfNDM/total)
 </div>
-This repository includes the code for the paper [Neural Dynamics Model for Temperature Estimation of Permanent Magnet Synchronous Motor](https://www.techrxiv.org/articles/preprint/Explainable_Neural_Dynamics_Models_for_Motor_Temperature_Prediction/24555889).
+
+This repository includes the code for the paper [Neural Dynamics Model for Temperature Estimation of Permanent Magnet Synchronous Motor](https://www.techrxiv.org/users/706792/articles/691946-explainable-neural-dynamics-models-for-electric-motor-temperature-estimation).
+
 <p align="center">
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/frame.jpg" width="900px"/>
+  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/frame.jpg" width="800px"/>
 </p>
 
 # Abstract
@@ -15,7 +17,7 @@ Accurate temperature estimation of permanent magnet synchronous motors is the ba
 
 # Quick start
 ## Dataset
-Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/pfNDM/tree/main/1_Software_code/Data) folder **firstly**!
+Download the dataset from this [website](https://www.kaggle.com/wkirgsn/electric-motor-temperature) and put it into the [Data](https://github.com/ms140429/pfNDM/1_Software_code/Data) folder **firstly**!
 ## Configuration
 Go into the folder *1_Software_code*, and
 ```
@@ -27,7 +29,7 @@ Go into the folder *1_Software_code*, and
 python Train.py
 ```
 # Hardware deployment
-Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/pfNDM/blob/main/2_Hardware_Implementation/README.md). :hammer::hammer:
+Detailed instructions for hardware deployment can be found [**here**](https://github.com/ms140429/pfNDM/2_Hardware_Implementation/README.md). :hammer::hammer: The trained pfNDM firstly split into many tiny parts, convolutional neural networks models are converted to .keras models, and others are converted to .onnx models. Then each model is converted into a .c model by Cube.AI. Finally, every model deployed on the microcontroller by Keil.
 <p align="center">
   <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/flow.png"  width="500px"/>
 </p>
@@ -37,18 +39,19 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
   <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/idle.jpg"  width="300px"/>
 </p>
 
- More details can be found in the accompanying [**video**](https://github.com/ms140429/pfNDM/blob/main/Hardware_demonstration.mp4).
+The left figure shows the current and voltage of the system at the full running state, and the right figure shows the current and voltage of the system at idle state. According to the current and voltage, the algorithm power can be calculated as 27 mW.
 
 # Experience result
-## Prediction and Decoupling
+## Estimation and Decoupling
+The first figure is the estimation result and the ground truth, the first row of the second figure is the decoupling result of NDM, and the second row of the second figure is the decoupling result of pfNDM.
 <p align="center">
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/pred1.png"/>
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/decouple1.png" />
+  <img src="https://github.com/ms140429/pfNDM/1_Software_code/pred1.png"/>
+  <img src="https://github.com/ms140429/pfNDM/1_Software_code/decouple1.png" />
 </p>
 
 ## Compared with state-of-the-art methods.
 <div align="center">
-  <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/comparsion.jpg"/>
+  <img src="https://github.com/ms140429/pfNDM/1_Software_code/comparsion.jpg"/>
 </div>
 
 ## The RAM and FLASH occupations
@@ -56,11 +59,11 @@ Detailed instructions for hardware deployment can be found [**here**](https://gi
   
 | **Model**    | **RAM**           | **FLASH**          |
 |:------------:|:-----------------:|:------------------:|
-| $f_{01}$     | 0.416 KB          | 0.416 KB           |
-| $f_{02}$     | 0.416 KB          | 10.69 KB           |
-| $f_u$        | 0.384 KB          | 29.66 KB           |
-| $f_x$        | 0.384 KB          | 9.19 KB            |
-| $f_y$        | 0.208 KB          | 0.768 KB           |
+| f_01    | 0.416 KB          | 0.416 KB           |
+| f_02     | 0.416 KB          | 10.69 KB           |
+| f_u        | 0.384 KB          | 29.66 KB           |
+| f_x        | 0.384 KB          | 9.19 KB            |
+| f_y        | 0.208 KB          | 0.768 KB           |
 | **Total** | **1.808 KB** | **50.724 KB** |
 
 </div>
