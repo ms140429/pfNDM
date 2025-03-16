@@ -6,7 +6,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/ms140429/pfNDM/total)
 </div>
 
-This repository includes the code for the paper [Neural Dynamics Model for Temperature Estimation of Permanent Magnet Synchronous Motor](https://www.techrxiv.org/users/706792/articles/691946-explainable-neural-dynamics-models-for-electric-motor-temperature-estimation).
+This repository includes the code for the IEEE TVT paper [Neural Dynamics Model for Temperature Estimation of Permanent Magnet Synchronous Motor](https://ieeexplore.ieee.org/document/10925903).
 
 <p align="center">
   <img src="https://github.com/ms140429/pfNDM/blob/main/1_Software_code/frame.jpg" width="800px"/>
@@ -70,10 +70,12 @@ The first figure is the estimation result and the ground truth, the first row of
 
 # Citation
 ```
-@ARTICLE{Liao23Explainable,
-  author={Xinyuan Liao and Shaowei Chen and Yunxiang Long and Shuai Zhao},
-  title={Explainable Neural Dynamics Models for Motor Temperature Prediction}, 
-  year={2023},
-  pages={1-9},
-  doi={10.36227/techrxiv.24555889}}
+@ARTICLE{10925903,
+  author={Liao, Xinyuan and Chen, Shaowei and Long, Yunxiang and Zhao, Shuai},
+  title={Neural Dynamics Model for Temperature Estimation of Permanent Magnet Synchronous Motor},
+  journal={IEEE Transactions on Vehicular Technology}, 
+  year={2025},
+  pages={1-11},
+  doi={10.1109/TVT.2025.3551375}
+}
 ```
