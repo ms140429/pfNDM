@@ -76,6 +76,7 @@ The first figure is the estimation result and the ground truth, the first row of
   journal={IEEE Transactions on Vehicular Technology}, 
   year={2025},
   pages={1-11},
-  doi={10.1109/TVT.2025.3551375}
+  doi={10.1109/TVT.2025.3551375},
+  publisher={IEEE}
 }
 ```
